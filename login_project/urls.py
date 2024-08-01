@@ -1,9 +1,12 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'), 
-    path('signup/', views.signup, name='signup'),  # Added comma and trailing slash for consistency
-    path('signin/', views.signin, name='signin'),  # Added comma and trailing slash for consistency
-    path('signout/', views.signout, name='signout')  # Added trailing slash for consistency
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('signup/', views.signup, name='signup'),  # Ensure the trailing slash
+    path('activate/<uidb64>/<token>/', views.activate, name='activate'),
+    path('signin/', views.signin, name='signin'),
+    path('signout/', views.signout, name='signout'),
 ]

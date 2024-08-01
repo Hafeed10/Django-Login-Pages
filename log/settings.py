@@ -26,10 +26,17 @@ SECRET_KEY = 'django-insecure-a+5tz7==bfjqoe=$k6w%4l-7nowqoj(g#ib6!94w_inukoz%%c
 DEBUG = True
 
 ALLOWED_HOSTS = []
+APPEND_SLASH = False
 
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'hafeexhafe@gmail.com'  # Corrected email host
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'hafeexhafe@gmail.com'  # Use your actual email
+EMAIL_HOST_PASSWORD = 'hafeed123'  # Use your actual email password
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login_project',
+    'login_project',  # Ensure this is your app name
 ]
 
 MIDDLEWARE = [
@@ -118,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-BASE_DIR / 'static'
+    BASE_DIR / 'static'
 ]
 
 # Default primary key field type
